@@ -1,4 +1,4 @@
-package bubble_sort;
+package Lesson1.bubble_sort;
 
 /**
  * Пузырьковая сортировка

@@ -1,4 +1,4 @@
-package selection_sort;
+package Lesson1.selection_sort;
 
 /**
  * Сортировка методом выбора.

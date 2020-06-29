@@ -1,6 +1,9 @@
+package Lesson1;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /**
  *  Возведение в степень (*используя чётность степени).
@@ -57,12 +60,17 @@ class ExponentiationApp {
 //        System.out.println("Введите число, степень числа через пробел: ");
 //        String[] str = buff.readLine().split(" ");
 //        System.out.println("Число: " + str[0] + ", степень: " + str[1]);
-//        System.out.println("Результат: " + Pow.pow(Integer.parseInt(str[0]), Integer.parseInt(str[1])));
+//        System.out.println("Результат: " + Lesson1.Pow.pow(Integer.parseInt(str[0]), Integer.parseInt(str[1])));
 
         int num = 5; int pow = 2;
         System.out.println("Число: " + num + ", степень: " + pow);
         System.out.println("Результат: " + Pow.pow(num, pow));
         System.out.println("Результат: " + Pow.recursionPow(num, pow));
         System.out.println("Результат: " + Pow.powBin(num, pow));
+
+        ArrayList<Integer> li = new ArrayList<Integer>();
+        ArrayList<Float> lf = new ArrayList<Float>();
+        if (li.getClass() == lf.getClass()) // evaluates to true
+            System.out.println("Equal");
     }
 }

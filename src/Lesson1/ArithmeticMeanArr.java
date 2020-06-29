@@ -1,3 +1,5 @@
+package Lesson1;
+
 import java.util.Arrays;
 
 /**
@@ -10,11 +12,29 @@ public class ArithmeticMeanArr {
         this.arr = arr;
     }
 
-    public void printArr() {
-        for (long a : arr) {
-            System.out.print(a + " ");
+    public long[] getArr() {
+        return arr;
+    }
+
+    @Override
+    public String toString() {
+//        for (long a : arr) {
+//            System.out.print(a + " ");
+//        }
+//        System.out.println(" ");
+
+        if (arr == null) return "null";
+
+        int iMax = arr.length - 1;
+        if (iMax == -1) return "[]";
+
+        StringBuilder b = new StringBuilder();
+        b.append('[');
+        for (int i = 0; ; i++) {
+            b.append(arr[i]);
+            if (i == iMax) return b.append(']').toString();
+            b.append(", ");
         }
-        System.out.println(" ");
     }
 
     /**
@@ -38,7 +58,7 @@ public class ArithmeticMeanArr {
 class ArithmeticMeanApp {
     public static void main(String[] args) {
         ArithmeticMeanArr arr = new ArithmeticMeanArr(new long[]{5, 85, 69, -5, 89, -56, 57});
-        arr.printArr();
+        System.out.println(arr);
         System.out.println("Среднее арифметическое массива: " + arr.arithmeticMean());
         System.out.println("Среднее ариф. массива с исп.Stream API: " + arr.arithmeticMeanSt());
     }
