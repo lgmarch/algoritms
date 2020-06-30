@@ -1,4 +1,4 @@
-package Lesson1.selection_sort;
+package lesson1.selection_sort;
 
 import java.util.ArrayList;
 import java.util.Arrays;

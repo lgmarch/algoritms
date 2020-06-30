@@ -1,4 +1,4 @@
-package Lesson1.bubble_sort;
+package lesson1.bubble_sort;
 
 /**
  * Пузырьковая сортировка
@@ -38,6 +38,20 @@ public class BubbleSort {
                     long temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
+                }
+            }
+        }
+    }
+
+    public void bubbleSortEven() {
+        int even = 0;
+        for (int i = arr.length-1; i > 1; i--) {
+            for (int j = 0; even == 1 || j < i; j++) {
+                if (arr[j+even] > arr[j+1+even]) {
+                    long temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                    even = even == 1 ? 0 : 1;
                 }
             }
         }
