@@ -166,6 +166,22 @@ public class Array {
     }
 
     /**
+     * Улучшение пузырьковой сортировки. Реальный алгоритм.
+     */
+    public int sortBubbleEvenOdd() {
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            for (int j = (i % 2 != 0) ? 0 : 1; j < size - 1; j += 2) {
+                count++;
+                if (arr[j] > arr[j + 1]) {
+                    swap(arr[j], arr[j + 1]);
+                }
+            }
+        }
+        return count;
+    }
+
+    /**
      * Улучшение пузырьковой сортировки.
      * Сравниваем вначале четные, затем нечетные. Если перестановки не было, выходим
      */
@@ -290,6 +306,45 @@ public class Array {
             while(v-- > 0) arr[num++] = p.getKey();
         }
     }
+
+    /**
+     * Сортировка подсчетом.
+     */
+    int getMax() {
+        if (size == 0) throw new RuntimeException("Empty array");
+        if (size == 1) return arr[0];
+        int r = arr[0];
+        for (int i = 1; i < size; i++) {
+            if (r < arr[i])
+                r = arr[i];
+        }
+        return r;
+    }
+
+    int getMin() {
+        if (size == 0) throw new RuntimeException("Empty array");
+        if (size == 1) return arr[0];
+        int r = arr[0];
+        for (int i = 1; i < size; i++) {
+            if (r > arr[i])
+                r = arr[i];
+        }
+        return r;
+    }
+
+    void pigeon() {
+        int min = getMin();
+        int max = getMax();
+        int[] freq = new int[max - min + 1];
+        for (int i = 0; i < size; i++)
+            freq[arr[i] - min]++;
+
+        int arrIndex = 0;
+        for (int i = 0; i < freq.length; i++)
+            for (int elems = freq[i]; elems > 0; elems--)
+                arr[arrIndex++] = i + min;
+    }
+    //**********************
 
     /**
      * Время доступа к элементам Map O(1)
