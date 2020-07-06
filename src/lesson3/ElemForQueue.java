@@ -36,10 +36,12 @@ public class ElemForQueue implements Comparable<ElemForQueue>{
 
 class MainPriorityQueue{
     public static void main(String[] args) {
+        //MaxQueue maxQueue = new MaxQueue();
         ElemForQueue[] prior = new ElemForQueue[10];
         PriorityQueue<ElemForQueue> priorityQueue = new PriorityQueue<>(10, prior);
 
         priorityQueue.push(new ElemForQueue(5,10));
+        MaxQueue.max(priorityQueue.getArr(), priorityQueue.getHead());
         priorityQueue.printArr();
         priorityQueue.push(new ElemForQueue(1,20));
         priorityQueue.printArr();

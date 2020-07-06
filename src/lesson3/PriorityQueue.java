@@ -2,8 +2,8 @@ package lesson3;
 
 import java.util.NoSuchElementException;
 
-public class PriorityQueue<T extends ElemForQueue> {
-    private T[] arr;
+public class PriorityQueue <T> {
+    private final T[] arr;
     private int capacity;
     private int head; //указатель на последний элемент
 
@@ -11,6 +11,14 @@ public class PriorityQueue<T extends ElemForQueue> {
         this.capacity = capacity;
         this.head = -1;
         this.arr = arr;
+    }
+
+    public T[] getArr() {
+        return arr;
+    }
+
+    public int getHead() {
+        return head;
     }
 
     public boolean isEmpty() {
@@ -29,7 +37,7 @@ public class PriorityQueue<T extends ElemForQueue> {
 //            arr = newArr;
         }
         arr[++head] = value;
-        MaxQueue.max(arr, head);
+//        MaxQueue.max(arr, head);
     }
 
     public void printArr(){

@@ -1,6 +1,9 @@
 package lesson3;
 
 public class MaxQueue {
+    public MaxQueue() {
+    }
+
     public static <T extends Comparable<T>> ElemForQueue max(T[] a, int head) {
         T temp;
         int i, j, min;
