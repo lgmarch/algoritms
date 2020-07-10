@@ -36,8 +36,8 @@ public class DoubleList {
     }
 
     public Link deleteHead(){
-        Link delElem = head;
         if (isEmpty()) return null;
+        Link delElem = head;
         if (head.next == null) tail = null;
         else delElem.prev = null;
         head = head.next;
