@@ -30,6 +30,10 @@ public class Tree {
 
     TreeNode root;
 
+    public TreeNode getRoot() {
+        return root;
+    }
+
     public void insert(Cat c) {
         TreeNode node = new TreeNode(c);
         if (root == null) {
@@ -152,10 +156,29 @@ public class Tree {
         return s;
     }
 
-}
-// 23 22 89 25 10 18 39 53 75 27 9 16 87 33 17 23 17
+    //Максимальное количество уровней в дереве: высота + 1. Используется рекурсия.
+    public int getHeight(TreeNode treeNode) {
+        if (treeNode == null) return 0;
+        if (treeNode.left == null && treeNode.right == null) return 1;
 
-// 9 (4 (2 (1, 3), 8 (6 (5, 7), N)), 13 (11 (10, 12), 15 (14, 16)))
+        int left = 0;
+        if (treeNode.left != null) {
+            left = getHeight(treeNode.left);
+        }
+        int right = 0;
+        if (treeNode.right != null) {
+            right = getHeight(treeNode.right);
+        }
+        return (Math.max(left, right) + 1);
+    }
+
+    //Сравниваем две соседние ветки
+    public boolean isBalance(TreeNode node) {
+        if (node == null) return true;
+        return Math.abs(Math.max(getHeight(node.left), 0) - Math.max(getHeight(node.right), 0)) < 2;
+    }
+
+}
 
 
 
