@@ -175,7 +175,9 @@ public class Tree {
     //Сравниваем две соседние ветки
     public boolean isBalance(TreeNode node) {
         if (node == null) return true;
-        return Math.abs(Math.max(getHeight(node.left), 0) - Math.max(getHeight(node.right), 0)) < 2;
+        return isBalance(node.left) &&
+                isBalance(node.right) &&
+                Math.abs(getHeight(node.left) - getHeight(node.right)) < 2;
     }
 
 }

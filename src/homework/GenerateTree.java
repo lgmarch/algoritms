@@ -21,7 +21,7 @@ public class GenerateTree {
     private Tree getTree(int levels) {
         Tree tree = new Tree();
         while (tree.getHeight(tree.getRoot()) < levels) {
-            tree.insert(new Cat(getRandomInt(), "1"));
+            tree.insert(new Cat(getRandomInt(-100, 100), "1"));
         }
         System.out.println(tree);
         System.out.println(tree.isBalance(tree.getRoot()) ? "Yes" : "No");
@@ -29,8 +29,9 @@ public class GenerateTree {
     }
 
     //Ну Котики с солидным возрастом...
-    private int getRandomInt() {
-        return (int) (Math.random() * 100);
+    private int getRandomInt(int min, int max) {
+        max -= min;
+        return (int) (Math.random() * ++max) - max;
     }
 
     public static void main(String[] args) {
