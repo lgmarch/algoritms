@@ -159,7 +159,6 @@ public class Tree {
     //Максимальное количество уровней в дереве: высота + 1. Используется рекурсия.
     public int getHeight(TreeNode treeNode) {
         if (treeNode == null) return 0;
-        if (treeNode.left == null && treeNode.right == null) return 1;
 
         int left = 0;
         if (treeNode.left != null) {
@@ -175,9 +174,7 @@ public class Tree {
     //Сравниваем две соседние ветки
     public boolean isBalance(TreeNode node) {
         if (node == null) return true;
-        return isBalance(node.left) &&
-                isBalance(node.right) &&
-                Math.abs(getHeight(node.left) - getHeight(node.right)) < 2;
+        return Math.abs(getHeight(node.left) - getHeight(node.right)) < 2;
     }
 
 }

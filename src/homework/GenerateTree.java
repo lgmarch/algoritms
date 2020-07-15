@@ -36,6 +36,6 @@ public class GenerateTree {
 
     public static void main(String[] args) {
         GenerateTree genTree = new GenerateTree();
-        genTree.run(20, 6);
+        genTree.run(20, 5);
     }
 }
